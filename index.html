@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoJo's | NF</title>
+    <link rel="stylesheet" href="./res/css/style.css"> <!-- Enlace actualizado a tu archivo CSS -->
+    <link rel="shortcut icon" href="./res/img/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Enlace a Font Awesome -->
+    <script defer src="./res/js/script.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="./res/img/logo.png" alt="Logo de NebliFlix" class="logo"> <!-- Logo de la empresa -->
+        <span class="header-text">
+            <span class="first-letter">N</span>ebli<span class="first-letter">F</span>lix
+        </span> <!-- Texto del encabezado -->
+    </div>
+    <h1>Geis Adventure</h1>
+    <div class="video-container">
+        <iframe id="videoFrame" width="560" height="315"
+            src="https://www.youtube.com/embed/OJrX3aNPsHM?si=aBU-9Fw6y2vKnGyL" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+
+
+    <div class="buttons">
+        <button class="video-button" data-video-id="kn4oejgpfzj3ng">Capítulo 12</button>
+    </div>
+    
+    <div class="buttons">
+        <button class="video-button" data-video-id="yafsiedbujyh">Capítulo 13</button>
+        <button class="video-button" data-video-id="wnzqw1mebe70n1">Capítulo 14</button>
+        <button class="video-button" data-video-id="o706zvn0cn79ve">Capítulo 15</button>
+        <button class="video-button" data-video-id="vnxjqw6qsmmwdv">Capítulo 16</button>
+        <button class="video-button" data-video-id="7rxzjowmhd18nen">Capítulo 17</button>
+        <button class="video-button" data-video-id="j9orkrlrfe4w6v">Capítulo 18</button>
+    </div>
+
+    <div class="buttons">
+        <button class="video-button" data-video-id="vnxjqjjpa67009">Capítulo 19</button>
+        <button class="video-button" data-video-id="o706z6l9igdl3q">Capítulo 20</button>
+        <button class="video-button" data-video-id="pk7d6d1xbv0v66">Capítulo 21</button>
+        <button class="video-button" data-video-id="n0denej3clqzl8g">Capítulo 22</button>
+        <button class="video-button" data-video-id="vnxjqj4ohp0dl1">Capítulo 23</button>
+        <button class="video-button" data-video-id="rwl7074ph048q8">Capítulo 24</button>
+    </div>
+    
+
+    <footer>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <a href="https://www.instagram.com/neblinosavt?" target="_blank"><i class="fab fa-instagram">
+                        </i> neblinosavt</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.twitch.tv/neblinosa" target="_blank"><i class="fab fa-twitch">
+                        </i> neblinosa</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.tiktok.com/@neblinosavt" target="_blank"><i class="fab fa-tiktok">
+                        </i> neblinosavt</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.youtube.com/@neblinosavt" target="_blank"><i class="fab fa-youtube">
+                        </i> Neblinosa</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.facebook.com/neblinosavt" target="_blank"><i class="fab fa-facebook">
+                        </i> Neblinosavt</a>
+                </div>
+
+                <div class="slide">
+                    <a href="https://www.instagram.com/neblinosavt?" target="_blank"><i class="fab fa-instagram">
+                        </i> neblinosavt</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.twitch.tv/neblinosa" target="_blank"><i class="fab fa-twitch">
+                        </i> neblinosa</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.tiktok.com/@neblinosavt" target="_blank"><i class="fab fa-tiktok">
+                        </i> neblinosavt</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.youtube.com/@neblinosavt" target="_blank"><i class="fab fa-youtube">
+                        </i> Neblinosa</a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.facebook.com/neblinosavt" target="_blank"><i class="fab fa-facebook">
+                        </i> Neblinosavt</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="preloader" id="preloader">
+        <img src="./res/img/logo-N.png" alt="Nebli Logo" id="nebli-logo">
+    </div>
+
+    <script>
+        function closepreloader() {
+            document.getElementById("preloader").style.display = 'none';
+        }
+        window.addEventListener("load", function () {
+            setTimeout(closepreloader, 2500);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(nextSlide, 3000); // Cambia el slide cada 3 segundos (3000 milisegundos)
+        });
+    </script>
+
+</body>
+
+</html>
