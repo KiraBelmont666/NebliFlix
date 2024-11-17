@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'voe':
                 videoUrl = `https://voe.sx/e/${videoId}`;
                 break;
+            case 'netu':
+                videoUrl = `https://hqq.ac/e/${videoId}`;
+                break;
             default:
                 videoName.textContent = initialVideoName;
                 return;
